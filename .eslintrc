@@ -1,0 +1,92 @@
+{
+  // 2 will report an error, meaning the eslint grunt task will fail.
+  // 1 will report a warning, but will not cause the task to fail.
+  // All rules that are set to 0 are off.
+  "rules": {
+    // Error if trying to access arguments.caller or arguments.callee
+    "no-caller": 2,
+
+    // Don't check for use of strict mode
+    "strict": 0,
+
+    // Only warn about new Captial because Angular uses $constructorName
+    "new-cap": 1,
+
+    // Error for use of alert, confirm, and prompt globals
+    "no-alert": 2,
+
+    // Line-length is max 80
+    "max-len": [2, 80, 2],
+
+    // Only Singlequotes
+    "quotes": [2, "single"],
+
+    // I want to enforce camelCase with a 2 but mocks in the unit tests
+    // sometimes need to do this
+    "camelcase": 1,
+
+    // Error if IIFEs are not wrapped correctly
+    "wrap-iife": [2, "inside"],
+
+    // Use typeof properly
+    "valid-typeof": 2,
+
+    // Use JSDocs properly
+    "valid-jsdoc": [2, { "requireReturn": false }],
+
+    // There's no option here that makes single line if statement curly braces
+    // (as per our coding standards) optional. Disabling for now
+    "curly": [0, "multi"],
+
+    // This would be good but @fonz's prototype proxy pattern breaks it
+    "no-use-before-define": 0,
+
+    // Don't warn for throwing away the result of `new Blah()`;
+    "no-new": 0,
+
+    // Sometimes it's useful to assign and return.
+    // Think `return this.blah = new Blah();`
+    "no-return-assign": 0,
+
+    // Don't worry about dangling underscores like `var _private`
+    "no-underscore-dangle": 0,
+  },
+  "globals": {
+    // Used in both
+    "window": false,
+    "document": false,
+    "angular": false,
+
+    // Used in the browser
+    "XMLSerializer": false,
+    "DOMParser": false,
+    "XPathResult": false,
+    "XPathEvaluator": false,
+    "Jed": false,
+    "Highcharts": false,
+    "Modernizr" : false,
+    "Node": false,
+    "Aviary": false,
+
+    // Used in tests
+    "jasmine": false,
+    "spyOn": false,
+    "describe": false,
+    "beforeEach": false,
+    "afterEach": false,
+    "inject": false,
+    "module": false,
+    "it": false,
+    "by": false,
+    "browser": false,
+    "expect": false,
+    "phantomClick": false,
+    "require": false,
+    "recompile": false,
+    "getMock": false,
+
+    // Used in Node
+    "__dirname": false,
+    "process": false
+  }
+}
